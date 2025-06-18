@@ -8,7 +8,7 @@ const Card = ({ title, price, image, onAddToCart }) => {
         src={image}
         alt={title}
         className="card__image"
-        style={{ objectFit: 'cover', width: '100%', height: '200px', borderRadius: '8px' }}
+        style= {{ objectFit: 'cover', width: '100%', height: '200px', borderRadius: '8px' }}
       />
 
       <div className="card__content">
