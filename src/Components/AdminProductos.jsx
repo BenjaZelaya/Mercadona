@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react'
-import Card from '../Components/Card'
-import ProductForm from '../Components/ProductForm'
-import '../Style/HomePage.css'
+import Card from './Card'
+import ProductForm from './ProductForm'
+import '../Style/AdminProductos.css'
 
 const LOCAL_STORAGE_KEY = 'mis-productos'
 
-const HomePage = () => {
+const AdminProductos = () => {
   const [products, setProducts] = useState([])
 
   // Cargar productos desde localStorage
@@ -52,4 +52,4 @@ const HomePage = () => {
   )
 }
 
-export default HomePage
+export default AdminProductos

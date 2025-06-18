@@ -1,20 +1,18 @@
-import React from 'react'
-import Navbar from './Components/Navbar'
-import Footer from './Components/Footer'
-import HomePage from './Components/HomePage'
-
-
-
-
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import Inicio from './Pages/Inicio'
+import Registrarse from './Pages/Registrarse'
+import './App.css'
 
 function App() {
   return (
-    <>
-      <Navbar />
-      <HomePage />
-      <Footer />
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Inicio />} />
+        <Route path="/registrarse" element={<Registrarse />} />
+      </Routes>
+    </Router>
   )
 }
 
 export default App
+

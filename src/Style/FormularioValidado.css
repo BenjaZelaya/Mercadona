@@ -1,0 +1,67 @@
+/* Fondo general */
+.register-bg {
+  font-family: 'Poppins', sans-serif;
+}
+
+.register-bg {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0077ff, #00bcd4 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Estilo de la tarjeta */
+.card {
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border: none;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Inputs */
+form .form-control {
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  transition: all 0.3s ease-in-out;
+}
+
+form .form-control:focus {
+  border-color: #ffa94d;
+  box-shadow: 0 0 0 0.25rem rgba(255, 169, 77, 0.25);
+}
+
+/* Botones modernos */
+form .btn {
+  border: none;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 10px 24px;
+  background: linear-gradient(135deg, #1c0df1, #784bf3, #4011e9);
+  color: white;
+  transition: all 0.3s ease-in-out;
+}
+
+form .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 105, 135, 0.3);
+  background-position: right center;
+  background-size: 200%;
+}
+
+/* Botón secundario */
+.btn-outline-secondary {
+  border: none;
+  background: #f0f0f0;
+  color: #333;
+  transition: background 0.3s;
+}
+
+.btn-outline-secondary:hover {
+  background: #ddd;
+  color: black;
+}

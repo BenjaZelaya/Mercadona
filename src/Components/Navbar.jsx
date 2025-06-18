@@ -12,6 +12,8 @@ const Navbar = () => {
         <a href="#" className="navbar__link">Productos</a>
         <a href="#" className="navbar__link">Ofertas</a>
         <a href="#" className="navbar__link">Contacto</a>
+        <a href="/registrarse" className='navbar__link'>Registrarse</a>
+        <a href="#" className='navbar__link'>Iniciar Sesion</a>
       </nav>
 
       <div className="navbar__cart">
