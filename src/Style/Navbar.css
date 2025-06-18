@@ -1,0 +1,81 @@
+/* Estilo base */
+.navbar {
+  background: linear-gradient(90deg, #0077ff, #00bcd4);
+  color: white;
+  padding: 16px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.navbar__logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  animation: pop-in 0.6s ease;
+}
+
+.navbar__menu {
+  display: flex;
+  gap: 24px;
+}
+
+.navbar__link {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.navbar__link:hover {
+  transform: scale(1.1);
+  color: #ffeb3b;
+}
+
+.navbar__cart {
+  position: relative;
+  cursor: pointer;
+}
+
+.navbar__cart-icon {
+  font-size: 1.5rem;
+  transition: color 0.3s;
+}
+
+.navbar__cart-icon:hover {
+  color: #ffeb3b;
+}
+
+.navbar__cart-count {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background: red;
+  color: white;
+  font-size: 0.7rem;
+  padding: 2px 6px;
+  border-radius: 50%;
+  font-weight: bold;
+}
+
+/* Animación */
+@keyframes pop-in {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .navbar__menu {
+    display: none;
+  }
+}
