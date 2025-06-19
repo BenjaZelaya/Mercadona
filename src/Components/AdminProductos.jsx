@@ -6,31 +6,22 @@ import '../Style/AdminProductos.css'
 const LOCAL_STORAGE_KEY = 'mis-productos'
 
 const AdminProductos = () => {
-  const [products, setProducts] = useState([])
+  const [products, setProducts] = useState(() => {
+    const stored = localStorage.getItem(LOCAL_STORAGE_KEY)
+    return stored ? JSON.parse(stored) : []
+  })
 
-  // Cargar productos desde localStorage
   useEffect(() => {
-    const storedProducts = localStorage.getItem(LOCAL_STORAGE_KEY)
-    console.log('📦 Leyendo localStorage:', storedProducts)
-
-    if (storedProducts) {
-      try {
-        setProducts(JSON.parse(storedProducts))
-      } catch (e) {
-        console.error('❌ Error al parsear localStorage:', e)
-      }
-    }
-  }, [])
-
-  // Guardar productos en localStorage
-  useEffect(() => {
-    console.log('💾 Guardando en localStorage:', products)
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(products))
   }, [products])
 
   const handleAddProduct = (product) => {
-    console.log('➕ Nuevo producto:', product)
     setProducts((prev) => [product, ...prev])
+  }
+
+  const handleDeleteProduct = (id) => {
+    const updated = products.filter(p => p.id !== id)
+    setProducts(updated)
   }
 
   return (
@@ -39,13 +30,28 @@ const AdminProductos = () => {
       <ProductForm onAddProduct={handleAddProduct} />
       <div className="cards-container">
         {products.map((product) => (
-          <Card
-            key={product.id}
-            title={product.title}
-            price={product.price}
-            image={product.image}
-            onAddToCart={() => alert(`Agregado: ${product.title}`)}
-          />
+          <div key={product.id} style={{ marginBottom: '1rem' }}>
+            <Card
+              title={product.title}
+              price={product.price}
+              image={product.image}
+              onAddToCart={() => alert(`Agregado: ${product.title}`)}
+            />
+            <button
+              style={{
+                marginTop: '0.5rem',
+                backgroundColor: 'red',
+                color: 'white',
+                border: 'none',
+                padding: '0.5rem 1rem',
+                borderRadius: '4px',
+                cursor: 'pointer'
+              }}
+              onClick={() => handleDeleteProduct(product.id)}
+            >
+              Eliminar Producto
+            </button>
+          </div>
         ))}
       </div>
     </div>
@@ -53,3 +59,4 @@ const AdminProductos = () => {
 }
 
 export default AdminProductos
+

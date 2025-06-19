@@ -9,18 +9,17 @@ const Navbar = () => {
 
       <nav className="navbar__menu">
         <a href="/" className="navbar__link">Inicio</a>
-        <a href="#" className="navbar__link">Productos</a>
+        <a href="/Tabla" className="navbar__link">Tabla</a>
         <a href="#" className="navbar__link">Ofertas</a>
         <a href="/Admin" className="navbar__link">Admin</a>
         <a href="/registrarse" className='navbar__link'>Registrarse</a>
-        <a href="#" className='navbar__link'>Iniciar Sesion</a>
+        <a href="/IniciarSesion" className='navbar__link'>Iniciar Sesion</a>
       </nav>
 
       <div className="navbar__cart">
         <a href="/Carrito"  className="text-light fs-4">
           <FaShoppingCart />
         </a>
-        <span className="navbar__cart-count">3</span>
       </div>
     </header>
   );

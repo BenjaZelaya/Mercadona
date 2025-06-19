@@ -24,7 +24,6 @@ const ProductForm = ({ onAddProduct }) => {
 
       onAddProduct(newProduct)
 
-      // Limpiar
       setTitle('')
       setPrice('')
       setImageFile(null)
@@ -60,3 +59,4 @@ const ProductForm = ({ onAddProduct }) => {
 }
 
 export default ProductForm
+

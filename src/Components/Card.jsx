@@ -8,9 +8,8 @@ const Card = ({ title, price, image, onAddToCart }) => {
         src={image}
         alt={title}
         className="card__image"
-        style= {{ objectFit: 'cover', width: '100%', height: '200px', borderRadius: '8px' }}
+        style={{ objectFit: 'cover', width: '100%', height: '200px', borderRadius: '8px' }}
       />
-
       <div className="card__content">
         <h3 className="card__title">{title}</h3>
         <p className="card__price">${price}</p>
@@ -23,3 +22,4 @@ const Card = ({ title, price, image, onAddToCart }) => {
 }
 
 export default Card
+

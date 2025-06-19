@@ -64,7 +64,7 @@ const FormularioValidado = () => {
     alert('Usuario registrado');
 
     setTimeout(() => {
-      navigate('/');
+      navigate('/Admin');
     }, 1000);
   };
 

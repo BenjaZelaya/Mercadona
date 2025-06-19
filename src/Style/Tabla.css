@@ -1,0 +1,88 @@
+/* Fondo general con gradiente suave */
+.tabla-bg {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #fceabb 0%, #f8b500 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Contenedor interno con sombra y borde suave */
+.tabla-contenido {
+  background-color: #ffffffdd;
+  backdrop-filter: blur(8px);
+  padding: 2rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  max-width: 800px;
+  width: 100%;
+}
+
+/* Título */
+.titulo {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Formulario */
+.formulario .form-control,
+.formulario .form-select {
+  border-radius: 0.75rem;
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+.formulario .form-control:focus {
+  border-color: #f8b500;
+  box-shadow: 0 0 0 0.2rem rgba(248, 181, 0, 0.3);
+}
+
+/* Botón */
+.boton-agregar {
+  background: linear-gradient(135deg, #ffda77, #ffc107);
+  border: none;
+  color: #333;
+  font-weight: 600;
+  padding: 0.6rem 1.2rem;
+  border-radius: 999px;
+  transition: all 0.3s ease;
+}
+
+.boton-agregar:hover {
+  background: #ffca2c;
+  transform: translateY(-2px);
+}
+
+/* Tabla */
+.tabla-productos {
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.tabla-productos th {
+  background-color: #ffc107;
+  color: #333;
+  text-align: center;
+}
+
+.tabla-productos td {
+  text-align: center;
+}
+
+/* Total */
+.total {
+  text-align: right;
+  font-weight: bold;
+  color: #000;
+}
+
+/* Mensaje cuando no hay productos */
+.mensaje-vacio {
+  text-align: center;
+  font-style: italic;
+  color: #666;
+}
