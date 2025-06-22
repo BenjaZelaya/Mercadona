@@ -10,6 +10,7 @@ const Inicio = () => {
     <div>
         <Navbar/>
         <VerProductos/>
+        <h1>Hola Mundo</h1>
     </div>
 
   )
