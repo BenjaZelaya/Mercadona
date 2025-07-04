@@ -1,40 +1,51 @@
-/* Estilo base */
+/* Navbar estática, transparente y con efecto terrorífico */
 .navbar {
-  background: linear-gradient(90deg, #0077ff, #00bcd4);
+  background: rgba(0, 0, 0, 0.3); /* transparencia */
+  backdrop-filter: blur(6px);    /* desenfoque de fondo */
   color: white;
   padding: 16px 32px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: sticky;
+  position: fixed;    /* <--- fija arriba */
   top: 0;
-  z-index: 100;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
 }
 
+/* Logo */
 .navbar__logo {
   font-size: 1.8rem;
   font-weight: bold;
   animation: pop-in 0.6s ease;
+  color: white;
+  font-family: 'Roboto', sans-serif;
 }
 
+/* Menú */
 .navbar__menu {
   display: flex;
   gap: 24px;
 }
 
+/* Links */
 .navbar__link {
   color: white;
   text-decoration: none;
   font-weight: 500;
-  transition: transform 0.3s, color 0.3s;
+  font-family: sans-serif;
+  transition: all 0.3s ease;
 }
 
 .navbar__link:hover {
   transform: scale(1.1);
-  color: #ffeb3b;
+  color: #ffeb3b; /* amarillo */
+  font-family: 'Roboto', sans-serif;
 }
 
+/* Ícono del carrito */
 .navbar__cart {
   position: relative;
   cursor: pointer;
@@ -42,6 +53,7 @@
 
 .navbar__cart-icon {
   font-size: 1.5rem;
+  color: white;
   transition: color 0.3s;
 }
 
@@ -49,6 +61,7 @@
   color: #ffeb3b;
 }
 
+/* Contador del carrito */
 .navbar__cart-count {
   position: absolute;
   top: -8px;
@@ -61,7 +74,23 @@
   font-weight: bold;
 }
 
+/* Botón de cierre de sesión */
+.navbar__logout-btn {
+  background: transparent;
+  border: 1px solid white;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Roboto', sans-serif;
+}
 
+.navbar__logout-btn:hover {
+  background-color: red;
+  color: white;
+  transform: scale(1.05);
+}
 
 /* Animación */
 @keyframes pop-in {

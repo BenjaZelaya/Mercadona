@@ -1,7 +1,7 @@
 import React from 'react'
 import Navbar from '../Components/Navbar'
-import AdminProductos from '../Components/AdminProductos'
 import VerProductos from '../Components/VerProductos'
+import Footer from '../Components/Footer'
 
 
 
@@ -10,7 +10,7 @@ const Inicio = () => {
     <div>
         <Navbar/>
         <VerProductos/>
-        <h1>Hola Mundo</h1>
+        <Footer/>
     </div>
 
   )

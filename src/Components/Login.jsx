@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { useNavigate } from 'react-router-dom';
+import '../Style/Login.css';
 
 const Login = () => {
   const [credentials, setCredentials] = useState({ user: '', password: '' });
@@ -40,7 +41,7 @@ const Login = () => {
     );
     localStorage.setItem('users', JSON.stringify(updatedUsers));
 
-    navigate('/Admin'); // redirigir a página de usuario
+    navigate('/Inicio'); // redirigir a página de usuario
   };
 
   return (
@@ -76,6 +77,7 @@ const Login = () => {
         <Button variant="primary" type="submit" className="w-100">
           Iniciar Sesión
         </Button>
+        <p>Si es primera vez, registrese <a href="/Registrarse">aqui</a></p>
       </Form>
     </div>
   );

@@ -1,27 +1,42 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import Card from './Card'
 import ProductForm from './ProductForm'
 import '../Style/AdminProductos.css'
 
-const LOCAL_STORAGE_KEY = 'mis-productos'
+const API_URL = 'http://localhost:3001/products' // tu backend local
 
 const AdminProductos = () => {
-  const [products, setProducts] = useState(() => {
-    const stored = localStorage.getItem(LOCAL_STORAGE_KEY)
-    return stored ? JSON.parse(stored) : []
-  })
+  const [products, setProducts] = useState([])
 
+  // GET productos
   useEffect(() => {
-    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(products))
-  }, [products])
+    fetch(API_URL)
+      .then(res => res.json())
+      .then(data => setProducts(data))
+      .catch(err => console.error('Error al cargar productos:', err))
+  }, [])
 
+  // POST producto
   const handleAddProduct = (product) => {
-    setProducts((prev) => [product, ...prev])
+    fetch(API_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(product)
+    })
+      .then(res => res.json())
+      .then(newProduct => setProducts(prev => [newProduct, ...prev]))
+      .catch(err => console.error('Error al agregar producto:', err))
   }
 
+  // DELETE producto
   const handleDeleteProduct = (id) => {
-    const updated = products.filter(p => p.id !== id)
-    setProducts(updated)
+    fetch(`${API_URL}/${id}`, {
+      method: 'DELETE'
+    })
+      .then(() => {
+        setProducts(prev => prev.filter(p => p.id !== id))
+      })
+      .catch(err => console.error('Error al eliminar producto:', err))
   }
 
   return (
@@ -59,4 +74,5 @@ const AdminProductos = () => {
 }
 
 export default AdminProductos
+
 

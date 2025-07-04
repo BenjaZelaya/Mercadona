@@ -64,7 +64,7 @@ const FormularioValidado = () => {
     alert('Usuario registrado');
 
     setTimeout(() => {
-      navigate('/Admin');
+      navigate('/Inicio');
     }, 1000);
   };
 
@@ -125,6 +125,7 @@ const FormularioValidado = () => {
             <Button variant="primary" type="submit" className="w-100">
               Registrarse
             </Button>
+            <p>Si ya tienes una cuenta, inicia sesion <a href="/IniciarSesion">aqui</a></p>
           </Form>
         </Card>
       </Container>

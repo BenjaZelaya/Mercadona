@@ -1,67 +1,81 @@
-/* Fondo general */
-.register-bg {
-  font-family: 'Poppins', sans-serif;
-}
+@import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
 
 .register-bg {
+  background: url('/src/assets/fondo-de-register.gif') center/cover no-repeat fixed;
   min-height: 100vh;
-  background: linear-gradient(135deg, #0077ff, #00bcd4 100%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
+  font-family: 'Creepster', cursive;
 }
 
-/* Estilo de la tarjeta */
 .card {
-  border-radius: 1rem;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  border: none;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-}
-
-/* Inputs */
-form .form-control {
-  border-radius: 0.75rem;
-  font-size: 1rem;
-  border: 1px solid #ccc;
-  transition: all 0.3s ease-in-out;
-}
-
-form .form-control:focus {
-  border-color: #ffa94d;
-  box-shadow: 0 0 0 0.25rem rgba(255, 169, 77, 0.25);
-}
-
-/* Botones modernos */
-form .btn {
-  border: none;
-  border-radius: 999px;
-  font-weight: 600;
-  font-size: 16px;
-  padding: 10px 24px;
-  background: linear-gradient(135deg, #1c0df1, #784bf3, #4011e9);
+  background-color: rgba(0, 0, 0, 0.85) !important;
+  border: 1px solid red;
   color: white;
-  transition: all 0.3s ease-in-out;
 }
 
-form .btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(255, 105, 135, 0.3);
-  background-position: right center;
-  background-size: 200%;
+.card h2 {
+  color: red;
+  text-shadow: 2px 2px 5px black;
+  animation: flicker 2s infinite;
+  font-family: 'Creepster', cursive;
 }
 
-/* Botón secundario */
-.btn-outline-secondary {
+.form-label {
+  color: #ccc;
+  font-size: 1.1rem;
+}
+
+.form-control {
+  background-color: #111 !important;
+  color: white !important;
+  border: 1px solid red !important;
+}
+
+.form-control::placeholder {
+  color: #bbb;
+}
+
+.invalid-feedback {
+  color: red !important;
+}
+
+button.btn-primary {
+  background-color: red !important;
   border: none;
-  background: #f0f0f0;
-  color: #333;
-  transition: background 0.3s;
+  font-weight: bold;
+  transition: 0.3s;
+  font-family: 'Creepster', cursive;
 }
 
-.btn-outline-secondary:hover {
-  background: #ddd;
+button.btn-primary:hover {
+  background-color: black !important;
+  color: red !important;
+  border: 1px solid red !important;
+  box-shadow: 0 0 10px red;
+}
+
+button.btn-outline-secondary {
+  background-color: #222;
+  color: red;
+  border-color: red;
+  font-family: 'Creepster', cursive;
+}
+
+button.btn-outline-secondary:hover {
+  background-color: red;
   color: black;
+  border-color: black;
+}
+
+a {
+  color: #ff4d4d;
+  text-decoration: underline;
+}
+
+a:hover {
+  color: white;
+}
+
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
 }
